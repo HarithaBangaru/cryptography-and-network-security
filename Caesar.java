@@ -10,14 +10,12 @@ public class Caesar {
                 int plainNumeric = ALPHABET.indexOf(Character.toUpperCase(currentChar));
                 int cipherNumeric = (plainNumeric + cipherKey) % ALPHABET.length();
                 char cipherChar = ALPHABET.charAt(cipherNumeric);
-                if (Character.isLowerCase(currentChar)) {
+                if (Character.isLowerCase(currentChar)) 
                     ciphertext.append(Character.toLowerCase(cipherChar));
-                } else {
+                 else 
                     ciphertext.append(cipherChar);
-                }
-            } else {
-                ciphertext.append(currentChar);  // Keep non-alphabetic characters unchanged
-            }
+            } else 
+                ciphertext.append(currentChar); 
         }
         return ciphertext.toString();
     }
@@ -30,14 +28,12 @@ public class Caesar {
                 int cipherNumeric = ALPHABET.indexOf(Character.toUpperCase(currentChar));
                 int plainNumeric = (cipherNumeric - cipherKey + ALPHABET.length()) % ALPHABET.length();
                 char plainChar = ALPHABET.charAt(plainNumeric);
-                if (Character.isLowerCase(currentChar)) {
+                if (Character.isLowerCase(currentChar)) 
                     plaintext.append(Character.toLowerCase(plainChar));
-                } else {
+                 else 
                     plaintext.append(plainChar);
-                }
-            } else {
+            } else 
                 plaintext.append(currentChar);  
-            }
         }
         return plaintext.toString();
     }
